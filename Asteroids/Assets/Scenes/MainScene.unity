@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 476452757}
   - component: {fileID: 476452756}
   - component: {fileID: 476452760}
+  - component: {fileID: 476452761}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -154,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 50
-  mainForce: 3
-  sideForce: 1.5
+  mainForce: 3.5
+  sideForce: 2
   rb: {fileID: 476452757}
 --- !u!50 &476452757
 Rigidbody2D:
@@ -214,8 +215,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -780240341
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4454d59f829d5d04c8888abd0df44b67, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -260,6 +261,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 519420031}
+--- !u!60 &476452761
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476452755}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: -0.4330127, y: -0.25000003}
+      - {x: 0.43301272, y: -0.24999996}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,8 +484,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 519420031}
-  asteroid: {fileID: 309829499401581232, guid: c2f8220f870d66f4a84a799d00726ff8, type: 3}
-  spawnDelay: 5
+  asteroids:
+  - {fileID: 309829499401581232, guid: c2f8220f870d66f4a84a799d00726ff8, type: 3}
+  - {fileID: 2609653850987980625, guid: e59e1d39fcb1864418e35742ddc443af, type: 3}
+  spawnDelay: 3
 --- !u!4 &1015211637
 Transform:
   m_ObjectHideFlags: 0
@@ -470,4 +501,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1304117580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304117582}
+  - component: {fileID: 1304117581}
+  m_Layer: 0
+  m_Name: AsteroidSpawner 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1304117581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304117580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912e42a4314995147b3e537918d607ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 519420031}
+  asteroids:
+  - {fileID: 309829499401581232, guid: c2f8220f870d66f4a84a799d00726ff8, type: 3}
+  - {fileID: 2609653850987980625, guid: e59e1d39fcb1864418e35742ddc443af, type: 3}
+  spawnDelay: 3
+--- !u!4 &1304117582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304117580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
